@@ -19,10 +19,13 @@ class Tree():
 
     
         
-    def print_tree(self, node: TreeNode) -> None:
-        print(node.data)
+    def print_tree(self, node: TreeNode, ext="") -> None:
+        print(ext + node.data)
+        ext += "-"
         for child in node.children:
-            self.print_tree(child)
+            
+            self.print_tree(child, ext)
+            
 
 if __name__ == "__main__":
     tree = Tree()
